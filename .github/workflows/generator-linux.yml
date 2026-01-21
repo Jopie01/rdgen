@@ -308,6 +308,7 @@ jobs:
           echo -n "${{ env.custom }}" | cat > ./custom_.txt
           # sed -i '/intl:/a \ \ archive: ^3.6.1' ./flutter/pubspec.yaml
           sed -i -e 's|https://admin.rustdesk.com|${{ env.apiServer }}|' ./src/common.rs
+          sed -i -e 's|https://api.rustdesk.com|${{ env.apiServer }}|' ./libs/hbb_common/src/lib.rs
           
       - name: change url to custom
         if: env.urlLink != 'https://rustdesk.com'
